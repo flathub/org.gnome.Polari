@@ -219,6 +219,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/polari/3.26/polari-3.26.0.tar.xz",
                     "sha256": "e4925d423568cccf2b396921eea58d54ecc7664f65cb48c342a07671688a584e"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-appdata-Add-release-notes.patch"
                 }
             ]
         }
