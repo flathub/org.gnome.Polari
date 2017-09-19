@@ -1,0 +1,44 @@
+From f63096f5c55f884df88b7ca9b37c8fe83df632f6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Mon, 18 Sep 2017 21:19:46 +0200
+Subject: [PATCH] appdate: Update screenshot URLs
+
+Polari moved to our gitlab instance. Gitlab and cgit don't use the
+same format for accessing the raw file, so the redirect broke all
+screenshots. Use the proper gitlab URLs instead.
+---
+ data/appdata/org.gnome.Polari.appdata.xml.in | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/data/appdata/org.gnome.Polari.appdata.xml.in b/data/appdata/org.gnome.Polari.appdata.xml.in
+index bb911998..b577113a 100644
+--- a/data/appdata/org.gnome.Polari.appdata.xml.in
++++ b/data/appdata/org.gnome.Polari.appdata.xml.in
+@@ -22,19 +22,19 @@
+   </description>
+   <screenshots>
+     <screenshot type="default">
+-      <image>https://git.gnome.org/browse/polari/plain/data/appdata/polari-main.png</image>
++      <image>https://gitlab.gnome.org/GNOME/polari/raw/master/data/appdata/polari-main.png</image>
+     </screenshot>
+     <screenshot>
+-      <image>https://git.gnome.org/browse/polari/plain/data/appdata/polari-user-list.png</image>
++      <image>https://gitlab.gnome.org/GNOME/polari/raw/master/data/appdata/polari-user-list.png</image>
+     </screenshot>
+     <screenshot>
+-      <image>https://git.gnome.org/browse/polari/plain/data/appdata/polari-join-dialog.png</image>
++      <image>https://gitlab.gnome.org/GNOME/polari/raw/master/data/appdata/polari-join-dialog.png</image>
+     </screenshot>
+     <screenshot>
+-      <image>https://git.gnome.org/browse/polari/plain/data/appdata/polari-connection.png</image>
++      <image>https://gitlab.gnome.org/GNOME/polari/raw/master/data/appdata/polari-connection.png</image>
+     </screenshot>
+     <screenshot>
+-      <image>https://git.gnome.org/browse/polari/plain/data/appdata/polari-connection-properties.png</image>
++      <image>https://gitlab.gnome.org/GNOME/polari/raw/master/data/appdata/polari-connection-properties.png</image>
+     </screenshot>
+   </screenshots>
+   <url type="homepage">https://wiki.gnome.org/Apps/Polari</url>
+-- 
+2.13.5
+

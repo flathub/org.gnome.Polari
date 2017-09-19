@@ -223,6 +223,10 @@
                 {
                     "type": "patch",
                     "path": "0001-appdata-Add-release-notes.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-appdate-Update-screenshot-URLs.patch"
                 }
             ]
         }
