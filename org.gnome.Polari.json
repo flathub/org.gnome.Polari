@@ -122,6 +122,7 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/polari/3.26/polari-3.26.1.tar.xz",
                     "sha256": "997a0b0ce391f15155275ebb801cf5aed6255db4c2cb15b19ffa2aa687f7db69"
+                }
             ]
         }
     ]
