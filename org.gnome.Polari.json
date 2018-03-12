@@ -4,6 +4,7 @@
     "runtime-version": "3.26",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
+    "x-run-args": ["--test-instance"],
     "finish-args": [
         /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
@@ -13,6 +14,7 @@
         "--share=network",
         /* Our client name */
         "--own-name=org.freedesktop.Telepathy.Client.Polari",
+        "--own-name=org.freedesktop.Telepathy.Client.Polari.*",
         /* Telepathy */
         "--talk-name=org.freedesktop.Telepathy.AccountManager",
         "--talk-name=org.freedesktop.Telepathy.ChannelDispatcher",
@@ -120,8 +122,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/polari/3.26/polari-3.26.2.tar.xz",
-                    "sha256": "2f36361dacf5d924d134f231fdb36ec4539f7495fce325d9b2f2728bd17cc190"
+                    "url": "https://download.gnome.org/sources/polari/3.28/polari-3.28.0.tar.xz",
+                    "sha256": "a5b53101b9670c7c70a60e30620b3c9234b9f99981a907b615e5d06e336eef23"
                 }
             ]
         }
