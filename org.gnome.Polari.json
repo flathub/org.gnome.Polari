@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.28",
+    "runtime-version": "3.30",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -31,7 +31,7 @@
         /* Keyring */
         "--talk-name=org.freedesktop.secrets",
         /* log files written by tp-logger outside the sandbox */
-        "--filesystem=~/.local/share/TpLogger:ro",
+        "--filesystem=~/.local/share/TpLogger",
         "--env=TPL_LOG_DIR=.local/share",
         /* dconf */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
@@ -142,8 +142,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/polari/3.28/polari-3.28.1.tar.xz",
-                    "sha256": "cc271aa1e8ba858caa6d29e2e46dd9f837b4dfd9ec8d9737ececcebc6890c680"
+                    "url": "https://download.gnome.org/sources/polari/3.30/polari-3.30.1.tar.xz",
+                    "sha256": "a5f756a6c56900814055b6e8104ec5ef5feee68ea0d589312204b72fb295c281"
                 }
             ]
         }
