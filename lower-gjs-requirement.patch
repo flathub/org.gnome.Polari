@@ -1,0 +1,87 @@
+From c25f5f5649a6b4682bf5b6c3d70f9215cb62b3e5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Sat, 6 Oct 2018 21:56:43 +0200
+Subject: [PATCH 1/2] networksManager: Don't use Uint8Array conversion
+ unconditionally
+
+Older gjs versions returned a custom ByteArray object with an
+appropriate toString() implementation, make the code compatible
+with those.
+---
+ src/networksManager.js | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/networksManager.js b/src/networksManager.js
+index ea620e30..813ef938 100644
+--- a/src/networksManager.js
++++ b/src/networksManager.js
+@@ -20,7 +20,9 @@ var NetworksManager = class {
+         let data;
+         try {
+             [, data] = file.load_contents(null);
+-            this._parseNetworks(ByteArray.toString(data));
++            if (data instanceof Uint8Array)
++                data = ByteArray.toString(data);
++            this._parseNetworks(data);
+         } catch (e) {
+             log(`Failed to load network list: ${e.message}`);
+         }
+-- 
+2.19.0
+
+
+From 446999dbda3d526099bc5bf6d86d86987c2bac08 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Sat, 6 Oct 2018 21:38:44 +0200
+Subject: [PATCH 2/2] build: Make debugger support optional
+
+This lowers the gjs requirement to the 3.28 version.
+---
+ meson.build  | 7 ++++++-
+ src/polari.c | 4 ++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 560489c9..718462e8 100644
+--- a/meson.build
++++ b/meson.build
+@@ -37,7 +37,7 @@ gio = dependency('gio-2.0', version: '>= 2.43.4')
+ gtk3 = dependency('gtk+-3.0', version: '>= 3.21.6')
+ telepathy_glib = dependency('telepathy-glib')
+ girepository = dependency('gobject-introspection-1.0')
+-gjs = dependency('gjs-1.0', version: '>= 1.53.90')
++gjs = dependency('gjs-1.0', version: '>= 1.52.0')
+ 
+ conf = configuration_data()
+ 
+@@ -49,6 +49,11 @@ conf.set_quoted('PKGLIBDIR', pkglibdir)
+ 
+ cc = meson.get_compiler('c')
+ conf.set('HAVE_STRCASESTR', cc.has_function('strcasestr'))
++conf.set('HAVE_GJS_DEBUGGER', cc.has_function(
++  'gjs_context_setup_debugger_console',
++  prefix: '#include <gjs/gjs.h>',
++  dependencies: gjs
++))
+ conf.set('SNAPSHOT', get_option('snapshot'))
+ 
+ config_h = declare_dependency(
+diff --git a/src/polari.c b/src/polari.c
+index 9804f5e8..4aec2b0b 100644
+--- a/src/polari.c
++++ b/src/polari.c
+@@ -69,7 +69,11 @@ main (int argc, char *argv[])
+   g_option_context_parse (option_context, &argc, &argv, NULL);
+ 
+   if (debugger)
++#ifdef HAVE_GJS_DEBUGGER
+     gjs_context_setup_debugger_console (context);
++#else
++    g_warning ("Polari was built without debugger support");
++#endif
+ 
+   js_argv = get_js_argv (argc, (const char * const *)argv);
+ 
+-- 
+2.19.0
+
