@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.28",
+    "runtime-version": "3.30",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -126,8 +126,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gspell.git",
-                    "tag": "1.6.1",
-                    "commit": "f2823c994b9af57d91e75c54bd1ec68a1dee5767"
+                    "tag": "1.8.1",
+                    "commit": "ba03499234037861e01ce1e83075e8a32b9790f3"
                 }
             ],
             "cleanup": [
@@ -144,10 +144,6 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/polari/3.30/polari-3.30.1.tar.xz",
                     "sha256": "a5f756a6c56900814055b6e8104ec5ef5feee68ea0d589312204b72fb295c281"
-                },
-                {
-                    "type": "patch",
-                    "path": "lower-gjs-requirement.patch"
                 }
             ]
         }
