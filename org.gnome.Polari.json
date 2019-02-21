@@ -2,6 +2,7 @@
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.30",
+    "default-branch": "beta",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -139,8 +140,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/polari/3.30/polari-3.30.2.tar.xz",
-                    "sha256": "820b4cc7e989d89a50db77d7bb5212b963648d86f8ee24798a55155d709b9d0b"
+                    "url": "https://download.gnome.org/sources/polari/3.31/polari-3.31.91.tar.xz",
+                    "sha256": "dfae746c6c5b0e84d812abf71eea464f5c839e90163f2c3c4207e5a721c4bd35"
                 }
             ]
         }
