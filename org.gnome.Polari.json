@@ -152,9 +152,10 @@
             "config-opts": ["--libdir=lib"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/polari/3.31/polari-3.31.92.tar.xz",
-                    "sha256": "0aab06c333367661d57f5e7b532368e766effbe03734c0e0f06791f956c7a35d"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/polari.git",
+                    "tag": "3.31.92",
+                    "commit": "aa3f623c0d12c2e1a5dec155abcea6a7c9ee9525"
                 }
             ]
         }
