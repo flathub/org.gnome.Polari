@@ -47,6 +47,19 @@
     ],
     "modules": [
         {
+            "name": "glib-networking",
+            "buildsystem": "meson",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/glib-networking.git",
+                    "tag": "2.58.0",
+                    "commit": "bd8ef31a4ca4552a10b8fe7897662a2b235f6e6f"
+                }
+            ]
+        },
+        {
             "name": "telepathy-glib",
             "config-opts": ["--disable-static", "--disable-gtk-doc"],
             "sources": [
