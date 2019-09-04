@@ -20,6 +20,7 @@
         "--talk-name=org.freedesktop.Telepathy.AccountManager",
         "--talk-name=org.freedesktop.Telepathy.ChannelDispatcher",
         "--talk-name=org.freedesktop.Telepathy.Connection.idle.irc.*",
+        "--talk-name=org.freedesktop.Telepathy.Client.GnomeShell.*",
         "--own-name=org.freedesktop.Telepathy.Client.TpGLibRequestAndHandle.*",
         /* Telepathy names owned by bundled services */
         "--own-name=org.freedesktop.Telepathy.AccountManager",
@@ -34,9 +35,8 @@
         /* log files written by tp-logger outside the sandbox */
         "--filesystem=~/.local/share/TpLogger",
         "--env=TPL_LOG_DIR=.local/share",
-        /* dconf */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+	/* GSettings migration */
+	"--metadata=X-DConf=migrate-path=/org/gnome/polari/"
     ],
     "cleanup": ["*.la",
                 "/include",
@@ -47,6 +47,18 @@
                 "/share/telepathy"
     ],
     "modules": [
+        {
+            "name": "dbus-glib",
+            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/dbus/dbus-glib.git",
+                    "tag": "dbus-glib-0.110",
+                    "commit": "ffeb6909967ff79585a7ede85227da94f04ecb01"
+                }
+            ]
+        },
         {
             "name": "glib-networking",
             "buildsystem": "meson",
@@ -85,6 +97,10 @@
                     "url": "https://www.github.com/TelepathyIM/telepathy-mission-control.git",
                     "tag": "telepathy-mission-control-5.16.4",
                     "commit": "74d553d4125224f0a95c9d2843d38861b42eae9f"
+                },
+                {
+                    "type": "patch",
+                    "path": "tp-mc-python3.patch"
                 }
             ],
             "cleanup": [
@@ -101,6 +117,10 @@
                     "url": "https://www.github.com/TelepathyIM/telepathy-idle.git",
                     "tag": "telepathy-idle-0.2.0",
                     "commit": "22371837e080c41343600ca773fd987e5310baf2"
+                },
+                {
+                    "type": "patch",
+                    "path": "tp-idle-python3.patch"
                 }
             ],
             "cleanup": [
@@ -120,6 +140,14 @@
                 {
                     "type": "patch",
                     "path": "tpl-override-basedir.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "tpl-python3.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "tpl-drop-intltool.patch"
                 }
             ],
             "cleanup": [
@@ -139,6 +167,14 @@
                     "url": "https://gitlab.gnome.org/GNOME/gspell.git",
                     "tag": "1.8.1",
                     "commit": "ba03499234037861e01ce1e83075e8a32b9790f3"
+                },
+                {
+                    "type": "patch",
+                    "path": "gspell-no-code-coverage.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "gspell-gettext-fix.patch"
                 }
             ],
             "cleanup": [
@@ -154,8 +190,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "3.32.1",
-                    "commit": "a66846444a8f7732698292a436aa8816fa8b1e81"
+                    "tag": "3.33.92",
+                    "commit": "e5e0d98e9ca7b0bc7e4b5b288c7ea5df8d901917"
                 }
             ]
         }
