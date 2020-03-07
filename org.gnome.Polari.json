@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.34",
+    "runtime-version": "3.36",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -59,19 +59,6 @@
             ]
         },
         {
-            "name": "glib-networking",
-            "buildsystem": "meson",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/glib-networking.git",
-                    "tag": "2.58.0",
-                    "commit": "bd8ef31a4ca4552a10b8fe7897662a2b235f6e6f"
-                }
-            ]
-        },
-        {
             "name": "telepathy-glib",
             "config-opts": ["--disable-static", "--disable-gtk-doc"],
             "sources": [
@@ -94,12 +81,12 @@
                 {
                     "type": "git",
                     "url": "https://www.github.com/TelepathyIM/telepathy-mission-control.git",
-                    "tag": "telepathy-mission-control-5.16.4",
-                    "commit": "74d553d4125224f0a95c9d2843d38861b42eae9f"
+                    "tag": "telepathy-mission-control-5.16.5",
+                    "commit": "5de9c50b0353f10b2fd7b1a6980c37bd7cb1b4dc"
                 },
                 {
                     "type": "patch",
-                    "path": "tp-mc-python3.patch"
+                    "path": "tp-mc-fix-prop-name.patch"
                 }
             ],
             "cleanup": [
@@ -189,8 +176,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "3.34.1",
-                    "commit": "c5f821cb2a3c01aeded386cfcff7b91248c33997"
+                    "tag": "3.36.0",
+                    "commit": "42bed50c5920eb8e63de0ace0efa9487df1a8fb2"
                 }
             ]
         }
