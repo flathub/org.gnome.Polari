@@ -1,13 +1,13 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "40",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
     "finish-args": [
         /* X11 + XShm access */
-        "--share=ipc", "--socket=x11",
+        "--share=ipc", "--socket=fallback-x11",
         /* Wayland access */
         "--socket=wayland",
         /* Needs network, obviously */
@@ -81,12 +81,8 @@
                 {
                     "type": "git",
                     "url": "https://www.github.com/TelepathyIM/telepathy-mission-control.git",
-                    "tag": "telepathy-mission-control-5.16.5",
-                    "commit": "5de9c50b0353f10b2fd7b1a6980c37bd7cb1b4dc"
-                },
-                {
-                    "type": "patch",
-                    "path": "tp-mc-fix-prop-name.patch"
+                    "tag": "telepathy-mission-control-5.16.6",
+                    "commit": "67df52b68b28e2a3755702b669a58747e21dd12b"
                 }
             ],
             "cleanup": [
@@ -101,20 +97,8 @@
                 {
                     "type": "git",
                     "url": "https://www.github.com/TelepathyIM/telepathy-idle.git",
-                    "tag": "telepathy-idle-0.2.0",
-                    "commit": "22371837e080c41343600ca773fd987e5310baf2"
-                },
-                {
-                    "type": "patch",
-                    "path": "tp-idle-python3.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "tp-idle-long-messages.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "tp-idle-fix-warning.patch"
+                    "tag": "telepathy-idle-0.2.1",
+                    "commit": "b0f139ff63c4d5f9471423422f298443ae222f9a"
                 }
             ],
             "cleanup": [
@@ -184,8 +168,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "3.38.0",
-                    "commit": "9eef1b6890959e27180c52b52820ea81d3bba434"
+                    "tag": "40.0",
+                    "commit": "6f8c05adfe17721556ba130733e76d9d06e2aecf"
                 }
             ]
         }
