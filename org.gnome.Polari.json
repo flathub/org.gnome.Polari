@@ -103,6 +103,10 @@
                     "url": "https://www.github.com/TelepathyIM/telepathy-idle.git",
                     "tag": "telepathy-idle-0.2.2",
                     "commit": "02d03c57cb5f061e374fe375c9b82f3c826cb538"
+                },
+                {
+                    "type": "patch",
+                    "path": "idle-build-fix.patch"
                 }
             ],
             "cleanup": [
