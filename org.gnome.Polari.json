@@ -149,8 +149,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "41.rc",
-                    "commit": "236b8c556b26b46bcba227eeb7b3763ca382ebe3"
+                    "tag": "41.0",
+                    "commit": "0eab55718a07fcf7b3231ac565bf3f1651bfbe7e"
                 }
             ]
         }
