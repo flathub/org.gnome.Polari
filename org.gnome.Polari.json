@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "40",
+    "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -65,8 +65,8 @@
                 {
                     "type": "git",
                     "url": "https://www.github.com/TelepathyIM/telepathy-glib.git",
-                    "tag": "telepathy-glib-0.24.1",
-                    "commit": "c834ef1a50a97cbfae7a0d560ff806fd5aa7ffe8"
+                    "tag": "telepathy-glib-0.24.2",
+                    "commit": "424e12a3277d23bc8cb3e84a1659a0939ade819e"
                 },
                 {
                     "type": "patch",
@@ -141,33 +141,6 @@
             ]
         },
         {
-            "name": "gspell",
-            "config-opts": [
-                "--disable-vala",
-                "--disable-static",
-                "--disable-gtk-doc"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gspell.git",
-                    "tag": "1.8.1",
-                    "commit": "ba03499234037861e01ce1e83075e8a32b9790f3"
-                },
-                {
-                    "type": "patch",
-                    "path": "gspell-no-code-coverage.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "gspell-gettext-fix.patch"
-                }
-            ],
-            "cleanup": [
-                "/bin"
-            ]
-        },
-        {
             "name": "polari",
             "buildsystem": "meson",
             "builddir": true,
@@ -176,12 +149,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "40.1",
-                    "commit": "0e353120d810c78e690fcae4c52cffd31fa2572a"
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-appdata-Update-screenshot-URLs.patch"
+                    "tag": "41.0",
+                    "commit": "0eab55718a07fcf7b3231ac565bf3f1651bfbe7e"
                 }
             ]
         }
