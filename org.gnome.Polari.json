@@ -12,6 +12,8 @@
         "--socket=wayland",
         /* Needs network, obviously */
         "--share=network",
+        /* GTK4 */
+        "--device=dri",
         /* Our client name */
         "--own-name=org.freedesktop.Telepathy.Client.Polari",
         "--own-name=org.freedesktop.Telepathy.Client.Polari.*",
