@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42beta",
+    "runtime-version": "45beta",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -149,8 +149,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "42.0",
-                    "commit": "e236b2916c1762509be65ac5e9c933193b9e7e16"
+                    "tag": "45.0",
+                    "commit": "9ea71de3d20fdc96e76bb55362418b9118e7cf07"
                 }
             ]
         }
