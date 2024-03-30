@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45beta",
+    "runtime-version": "46beta",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -116,30 +116,20 @@
             ]
         },
         {
-            "name": "telepathy-logger",
-            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "name": "tracker",
+            "buildsystem": "meson",
+            "cleanup": ["/etc", "/lib/systemd"],
+            "config-opts": ["--libdir=lib", "-Dbash_completion=false",
+                            "-Dsystemd_user_services=false",
+                            "-Dman=false", "-Ddocs=false",
+                            "-Dtests=false"],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://www.github.com/TelepathyIM/telepathy-logger.git",
-                    "tag": "telepathy-logger-0.8.2",
-                    "commit": "b342c568fe855786151e4f0f96276fc6c3cc7e43"
-                },
-                {
-                    "type": "patch",
-                    "path": "tpl-override-basedir.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "tpl-python3.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "tpl-drop-intltool.patch"
+                    "url": "https://gitlab.gnome.org/GNOME/tracker.git",
+                    "tag": "3.7.1",
+                    "commit": "327f134a5ecda56240ed21adf7074604d37280e8"
                 }
-            ],
-            "cleanup": [
-                "/share/dbus-1"
             ]
         },
         {
@@ -151,8 +141,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "45.0",
-                    "commit": "9ea71de3d20fdc96e76bb55362418b9118e7cf07"
+                    "tag": "46.0",
+                    "commit": "356f2e53ba2f25ec149aefa9f27aff0a74c29d29"
                 }
             ]
         }
