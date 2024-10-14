@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "x-run-args": ["--test-instance"],
@@ -73,6 +73,10 @@
                 {
                     "type": "patch",
                     "path": "tp-change-uniquify.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix-build-fix-with-Werror-incompatible-pointer-types.patch"
                 }
             ]
         },
@@ -116,7 +120,7 @@
             ]
         },
         {
-            "name": "tracker",
+            "name": "tinysparql",
             "buildsystem": "meson",
             "cleanup": ["/etc", "/lib/systemd"],
             "config-opts": ["--libdir=lib", "-Dbash_completion=false",
@@ -126,9 +130,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/tracker.git",
-                    "tag": "3.7.1",
-                    "commit": "327f134a5ecda56240ed21adf7074604d37280e8"
+                    "url": "https://gitlab.gnome.org/GNOME/tinysparql.git",
+                    "tag": "3.8.0",
+                    "commit": "a5f3c82f093f9e4c137270c443fd94ddf4f8009c"
                 }
             ]
         },
@@ -143,6 +147,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
                     "tag": "46.0",
                     "commit": "356f2e53ba2f25ec149aefa9f27aff0a74c29d29"
+                },
+                {
+                    "type": "patch",
+                    "path": "update-reuse-information.patch"
                 }
             ]
         }
