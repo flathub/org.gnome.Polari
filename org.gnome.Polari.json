@@ -152,6 +152,10 @@
                 {
                     "type": "patch",
                     "path": "update-reuse-information.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "362.patch"
                 }
             ]
         }
