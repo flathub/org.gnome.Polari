@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Polari",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
     "command": "polari",
     "finish-args": [
@@ -146,16 +146,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/polari.git",
-                    "tag": "46.0",
-                    "commit": "356f2e53ba2f25ec149aefa9f27aff0a74c29d29"
-                },
-                {
-                    "type": "patch",
-                    "path": "update-reuse-information.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "362.patch"
+                    "tag": "49.0",
+                    "commit": "5d52037e66d0ee80d69719163f45dbbbaf78f114"
                 }
             ]
         }
