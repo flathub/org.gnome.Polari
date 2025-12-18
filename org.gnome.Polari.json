@@ -6,7 +6,8 @@
     "command": "polari",
     "finish-args": [
         /* X11 + XShm access */
-        "--share=ipc", "--socket=fallback-x11",
+        "--share=ipc",
+        "--socket=fallback-x11",
         /* Wayland access */
         "--socket=wayland",
         /* Needs network, obviously */
@@ -38,13 +39,14 @@
 	/* GSettings migration */
 	"--metadata=X-DConf=migrate-path=/org/gnome/polari/"
     ],
-    "cleanup": ["*.la",
-                "/include",
-                "/lib/pkgconfig",
-                "/share/gir-1.0",
-                "/share/man",
-                "/share/polari/gir-1.0",
-                "/share/telepathy"
+    "cleanup": [
+        "*.la",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/gir-1.0",
+        "/share/man",
+        "/share/polari/gir-1.0",
+        "/share/telepathy"
     ],
     "modules": [
         {
@@ -68,7 +70,10 @@
         },
         {
             "name": "telepathy-glib",
-            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "config-opts": [
+                "--disable-static",
+                "--disable-gtk-doc"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -92,7 +97,10 @@
         },
         {
             "name": "telepathy-mission-control",
-            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "config-opts": [
+                "--disable-static",
+                "--disable-gtk-doc"
+            ],
             "sources": [
                 {
                     "type": "git",
